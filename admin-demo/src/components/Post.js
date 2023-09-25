@@ -9,6 +9,7 @@ import {
   TextField,
   DateField,
   NumberInput,
+  ReferenceField,
 } from "react-admin";
 
 export const PostList = () => {
@@ -19,6 +20,7 @@ export const PostList = () => {
         <TextField source="title" />
         <DateField source="publishedAt" />
         <TextField source="userId" label="Author" />
+        <ReferenceField source="userId" label="author" reference="users" />
       </Datagrid>
     </List>
   );
