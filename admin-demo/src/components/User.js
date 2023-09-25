@@ -4,6 +4,7 @@ import {
   TextField,
   EmailField,
   DeleteButton,
+  Create,
 } from "react-admin";
 
 import { Edit, NumberInput, SimpleForm, TextInput } from "react-admin";
@@ -25,14 +26,28 @@ export const UserList = () => {
 };
 
 export const UserEdit = () => (
-  <Edit>
-    <SimpleForm>
-      <TextInput disabled source="id" />
-      <TextInput source="name" />
-      <TextInput source="username" />
-      <TextInput source="email" />
-      <NumberInput source="phone" />
-      <TextInput source="company" />
-    </SimpleForm>
-  </Edit>
-);
+    <Edit>
+      <SimpleForm>
+        <TextInput disabled source="id" />
+        <TextInput source="name" />
+        <TextInput source="username" />
+        <TextInput source="email" />
+        <NumberInput source="phone" />
+        <TextInput source="company" />
+      </SimpleForm>
+    </Edit>
+  );
+
+  export const UserCreate = () => (
+    <Create title='Create User'>
+      <SimpleForm>
+        <TextInput source="id" />
+        <TextInput source="name" />
+        <TextInput source="username" />
+        <TextInput source="email" />
+        <NumberInput source="phone" />
+        <TextInput source="company" />
+      </SimpleForm>
+    </Create>
+  );
+    
