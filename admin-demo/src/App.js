@@ -6,13 +6,18 @@ import { PostCreate, PostEdit, PostList } from "./components/Post";
 import { authProvider } from "./authProvider";
 import PeopleIcon from "@mui/icons-material/People";
 import ArticleIcon from "@mui/icons-material/Article";
+import { createTheme } from '@mui/material';
 
 
 const dataProvider = restProvider("http://localhost:3000");
 
+const darkTheme = createTheme({
+  palette: { mode: 'dark' },
+});
+
 function App() {
   return (
-    <Admin dataProvider={dataProvider} authProvider={authProvider}>
+    <Admin dataProvider={dataProvider} authProvider={authProvider} darkTheme={darkTheme}>
       <Resource
         name="users"
         list={UserList}
