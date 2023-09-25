@@ -1,15 +1,14 @@
 import React from "react";
 import { Admin, Resource } from "react-admin";
 import restProvider from "ra-data-simple-rest";
-
-// Components
 import { UserCreate, UserEdit, UserList } from "./components/User";
+import { authProvider } from "./authProvider";
 
 const dataProvider = restProvider("http://localhost:3000");
 
 function App() {
   return (
-    <Admin dataProvider={dataProvider}>
+    <Admin dataProvider={dataProvider} authProvider={authProvider}>
       <Resource
         name="users"
         list={UserList}
